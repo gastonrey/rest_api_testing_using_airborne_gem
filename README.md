@@ -1,4 +1,4 @@
-** How to start **
+# How to start
 
 After cloning this project there some dependencies to be already have installed on your machine:
  
@@ -11,7 +11,7 @@ With this already installed, go to the cloned repo folder and execute:
 
 This will install all the necessary gems from Gemfile file.
 
-** How to execute the tests **
+# How to execute the tests
 
 To execute the whole suite, and get a HTML report: 
 
