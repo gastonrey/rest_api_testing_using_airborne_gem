@@ -5,7 +5,7 @@ shared_context "Execute API tests from Yaml" do |test_json_data|
     context "Given test case: ###  #{test_case["test_case"]} ###" do
       describe "Execute request passing Text: #{test_case["data"]}" do
 
-        before{ get (test_json_data["endpoint"] + test_case["data"]) }
+        before{ get ( test_case["data"]) }
 
         it "Then Response error msg is correct", :if => test_case["validations"].fetch("returned_error", false) do
           expect_json(error: test_case["validations"]["returned_error"])

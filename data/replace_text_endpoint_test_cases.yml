@@ -1,0 +1,23 @@
+
+test_cases:
+  - test_case: "Add text and replace a matching word by [empty]"
+    data: "Replace%20it%20by%20asterics&add=asterics&fill_char="
+    validations:
+      returned_modified_result: "Replace it by ********"
+  - test_case: "Add text and replace multiple matching words by -"
+    data: "Replace%20it%20by%20dashes&add=replace,dashes&fill_char=-"
+    validations:
+      returned_modified_result: "------- it by ------"
+  - test_case: "Add text and replace multiple matching words by a comma separated list of texts"
+    data: "Replace%20it%20by%20dashes&add=replace,dashes&fill_text=foo,bar"
+    validations:
+      returned_error: "Invalid User Replacement Text"
+  - test_case: "Add text and replace it by *"
+    data: "Replace%20it%20by%20asterics&add=replace,dashes&fill_char=*"
+    validations:
+      returned_modified_result: "******* it by asterics"
+  - test_case: "Add text and replace a matching word by *"
+    data: "Replace%20it%20by%20asterics&add=asterics&fill_char=*"
+    validations:
+      returned_modified_result: "Replace it by ********"
+
