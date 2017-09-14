@@ -1,0 +1,28 @@
+endpoint: "?text="
+test_cases:
+  - test_case: "Passing an empty text"
+    data: ""
+    validations:
+      returned_error: "No Input"
+      returned_status_code: 200
+  - test_case: "Passing a long text >= 250 chars"
+    data: <%= '_long_text_' * 290 %>
+    validations:
+      returned_status_code: 200
+  - test_case: "Adding valid text"
+    data: "My valid sent Text"
+    validations:
+      returned_status_code: 200
+      returned_type: "string"
+      returned_result: true
+  - test_case: "Add some valid text with a banned word"
+    data: "Am%20banned%20cause%20fucked"
+    validations:
+      returned_type: "string"
+      returned_modified_result: "Am banned cause ******"
+  - test_case: "Add some valid text using encoded spaces"
+    data: "Test%20me%20on%20the%20space"
+    validations:
+      returned_type: "string"
+      returned_modified_result: "Test me on the space"
+

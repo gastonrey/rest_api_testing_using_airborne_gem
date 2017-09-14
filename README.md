@@ -1,4 +1,4 @@
-** How to start **
+# How to start
 
 After cloning this project there some dependencies to be already have installed on your machine:
  
